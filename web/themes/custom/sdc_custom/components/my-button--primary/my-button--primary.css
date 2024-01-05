@@ -1,0 +1,6 @@
+[data-component-id].button.my-button {
+  background-color: #770db5;
+  border-color: #05094d;
+  text-transform: uppercase;
+  font-weight: bold;
+}

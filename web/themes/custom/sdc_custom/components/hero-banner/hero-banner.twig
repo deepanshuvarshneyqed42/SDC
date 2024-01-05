@@ -1,0 +1,17 @@
+{# Prepare presentational attributes #}
+{% if image is not empty %}
+  {% set attributes = attributes.setAttribute('style', 'background-image: linear-gradient(to right, black, black, rgba(0, 0, 0, 70%), transparent), url("' ~ image|render|striptags|trim|default('') ~ '");') %}
+{% endif %}
+
+{# Markup for the component #}
+<div {{ attributes.addClass('my-banner') }}>
+  <div class="my-banner--header">
+    <h3>{{ heading }}</h3>
+    {% if ctaText is not empty %}
+      {% include 'sdc_custom:cta-button' with { text: ctaText|default(''), href: ctaHref } only %}
+    {% endif %}
+  </div>
+  <div class="my-banner--body">
+    {{ description }}
+  </div>
+</div>

@@ -1,0 +1,6 @@
+name: SDC Custom theme
+type: theme
+description: A Theme for Single Directory Component.
+base theme: gin
+core: 10.x
+core_version_requirement: ^10
