@@ -16,20 +16,30 @@
     ],
     "require": {
         "composer/installers": "^2.0",
+        "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "^3.4",
+        "drupal/cl_editorial": "^2.0@beta",
         "drupal/cl_server": "^2.0.0@beta",
         "drupal/core-composer-scaffold": "^10.2",
         "drupal/core-project-message": "^10.2",
         "drupal/core-recommended": "^10.2",
+        "drupal/dab": "^1.0",
+        "drupal/field_group": "^3.4",
         "drupal/gin": "^3.0@rc",
         "drupal/gin_toolbar": "^1.0@rc",
+        "drupal/paragraphs": "^1.16",
+        "drupal/paragraphs_viewmode": "^1.1",
+        "drupal/sdc_display": "^1.0@beta",
         "drupal/sdc_examples": "1.x-dev@dev",
+        "drupal/sdc_story_generator": "2.0.x-dev@dev",
+        "drupal/sdc_styleguide": "^1.0@beta",
+        "drupal/ui_patterns": "^1.7",
         "drush/drush": "^12.4"
     },
     "conflict": {
         "drupal/drupal": "*"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
         "allow-plugins": {
@@ -38,7 +48,8 @@
             "drupal/core-project-message": true,
             "phpstan/extension-installer": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "php-http/discovery": true
+            "php-http/discovery": true,
+            "cweagans/composer-patches": true
         },
         "sort-packages": true
     },
@@ -46,6 +57,11 @@
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"
+            }
+        },
+        "patches": {
+            "drupal/paragraphs_viewmode": {
+                "entityViewModeAlter throws an exception in php 8.2": "https://www.drupal.org/files/issues/2023-03-01/paragraphs_viewmode-remove-context-parameter-3345123-2.patch"
             }
         },
         "installer-paths": {

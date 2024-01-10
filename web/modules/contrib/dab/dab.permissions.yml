@@ -1,0 +1,14 @@
+administer dab configuration:
+  title: 'Administer dab configuration'
+  description: 'Optional description.'
+  restrict access: true
+
+administer dab components:
+  title: 'Administer component'
+  description: 'Optional description.'
+  restrict access: true
+
+access dab components:
+  title: 'Access component'
+  description: 'Optional description.'
+  restrict access: true

@@ -1,0 +1,188 @@
+:root {
+  --dab-menu-items-columns: 4;
+}
+
+@media screen and (max-width: 1280px) {
+  :root {
+    --dab-menu-items-columns: 3;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  :root {
+    --dab-menu-items-columns: 2;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --dab-menu-items-columns: 1;
+  }
+}
+
+/* Page template */
+
+.dab-components_container {
+  display: grid;
+  grid-template-columns: 150px auto;
+  column-gap: 50px;
+}
+
+.dab-components_sidebar {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--color-gray-050);
+}
+
+.dab-components_sidebar-list {
+  position: sticky;
+  top: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.dab-components_sidebar-item {
+  padding: 0;
+  font-size: 1.3rem;
+}
+
+.dab-components_sidebar-item:hover,
+.dab-components_sidebar-item:focus,
+.dab-components_sidebar-item:active {
+  cursor: pointer;
+  background-color: var(--tabs--hover-bg-color);
+}
+
+
+.dab-components_sidebar-item .dab-components_sidebar-link {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.dab-components_sidebar-item.active .dab-components_sidebar-link {
+  color: var(--color-absolutezero);
+  border-left: 5px solid var(--color-absolutezero);
+  background-color: white;
+  font-weight: bold;
+}
+
+.dab-components_menu {
+  display: grid;
+  grid-template-columns: repeat(var(--dab-menu-items-columns), 1fr);
+  gap: 20px;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.dab-components_card {
+  position: relative;
+  justify-content: center;
+  min-height: 150px;
+  list-style: none;
+}
+
+.dab-components_card:hover,
+.dab-components_card:focus,
+.dab-components_card:active {
+  cursor: pointer;
+  background-color: var(--tabs--hover-bg-color);
+}
+
+.dab-component_menu-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  padding: 5px 20px;
+  text-decoration: none;
+}
+
+.dab-component_menu-item::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  content: '';
+}
+
+.dab-components_card .dab-iframe {
+  width: 100%;
+  height: 150px;
+  resize: none;
+}
+
+.dab-component_description {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.dab-container {
+  position: relative;
+  display: block;
+  width: calc(100% - 40px);
+  max-width: none;
+  min-height: 40px;
+  margin: 0 auto;
+  padding: 20px;
+  transition: all .2s ease-in-out;
+  box-shadow: 0 1px 4px rgba(0,0,0,.4);
+  line-height: 0;
+}
+
+.dab-menu_container {
+  all: unset;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+
+.dab-menu_container--right {
+  justify-content: right;
+}
+
+.dab-menu_item {
+  list-style: none;
+}
+
+.dab-menu_item .form-item {
+  margin-top: 0;
+}
+
+.dab-menu_item:not(:last-child) {
+  margin-right: 15px;
+}
+
+.dab-menu_item:last-child a.button {
+  margin-right: 0;
+}
+
+.dab-iframe {
+  width: 100%;
+  height: 360px;
+  max-height: 100%;
+  resize: vertical;
+}
+
+.cache-clear-form {
+  margin-bottom: 0;
+}
+
+.cache-clear-form .button {
+  margin-right: 0;
+}
+
+.dab_form-filter__container .form-item {
+  margin-bottom: 5px;
+}
+
+input.button.dab_form-filter__submit {
+  margin-top: 5px;
+}
+

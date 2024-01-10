@@ -1,0 +1,11 @@
+services:
+  dab.markdown_service:
+    class: \Drupal\dab\Service\MarkdownService
+
+  dab.component_file_manager:
+    class: \Drupal\dab\Service\ComponentFileManager
+    arguments:
+      - '@file_system'
+      - '@messenger'
+      - '@extension.list.module'
+      - '@extension.list.theme'

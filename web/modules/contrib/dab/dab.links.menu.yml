@@ -1,0 +1,23 @@
+dab.menu:
+  title: 'Drupal Atomic Builder'
+  parent: system.admin
+  route_name: dab.menu
+  weight: 0
+
+dab.components:
+  class: \Drupal\Core\Menu\MenuLinkDefault
+  deriver: Drupal\dab\Plugin\Derivative\AtomicComponentMenuLinkDeriver
+
+dab.add_component:
+  title: Add component
+  parent: dab.menu
+  route_name: dab.add_component
+  weight: -50
+
+dab.settings:
+  title: Settings
+  description: Configure Drupal Atomic Builder.
+  parent: dab.menu
+  route_name: dab.components_types_configuration
+  weight: 10
+

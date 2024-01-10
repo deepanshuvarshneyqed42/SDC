@@ -1,0 +1,14 @@
+# Custom module library for general purposes.
+global:
+  js:
+    js/dab.js: {}
+  css:
+    layout:
+      css/dab.css: {}
+  dependencies:
+    - core/drupalSettings
+
+toolbar:
+  css:
+    theme:
+      css/toolbar.css: {}

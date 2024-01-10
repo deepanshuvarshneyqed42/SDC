@@ -1,0 +1,134 @@
+dab.components_types_configuration:
+  path: '/admin/dab/components/settings'
+  defaults:
+    _title: 'Configure Components types'
+    _form: 'Drupal\dab\Form\ConfigureComponentsTypesForm'
+  requirements:
+    _permission: 'administer dab components'
+
+dab.menu:
+  path: 'admin/dab/components'
+  defaults:
+    _title: 'Drupal Atomic Builder'
+    _controller: '\Drupal\dab\Controller\DabComponentListController::build'
+  requirements:
+    _permission: 'access dab components'
+
+dab.component_type_list:
+  path: '/admin/dab/components/{component_type}'
+  defaults:
+    _title_callback: '\Drupal\dab\Controller\DabComponentListController::getTitle'
+    _controller: '\Drupal\dab\Controller\DabComponentListController::build'
+    component_type: null
+  options:
+    parameters:
+      component_type:
+        type: string
+  requirements:
+    _permission: 'access dab components'
+
+dab.add_component:
+  path: '/admin/dab/components/add'
+  defaults:
+    _title: 'Add component'
+    _form: 'Drupal\dab\Form\AddComponentForm'
+  requirements:
+    _permission: 'administer dab components'
+
+dab.component:
+  path: '/admin/dab/components/{component_type}/{provider}/{machine_name}'
+  defaults:
+    _title_callback: '\Drupal\dab\Controller\DabComponentController::getTitle'
+    _controller: '\Drupal\dab\Controller\DabComponentController::build'
+  options:
+    parameters:
+      component_type:
+        type: string
+      machine_name:
+        type: string
+      provider:
+        type: string
+  requirements:
+    _permission: 'access dab components'
+
+dab.component_embed:
+  path: '/admin/dab/components/{component_type}/{provider}/{machine_name}/embed'
+  defaults:
+    _title_callback: '\Drupal\dab\Controller\DabComponentController::getTitle'
+    _controller: '\Drupal\dab\Controller\DabComponentController::embed'
+  options:
+    parameters:
+      component_type:
+        type: string
+      machine_name:
+        type: string
+      provider:
+        type: string
+  requirements:
+    _permission: 'access dab components'
+
+dab.component_documentation:
+  path: '/admin/dab/components/{component_type}/{provider}/{machine_name}/documentation'
+  defaults:
+    _title_callback: '\Drupal\dab\Controller\DabComponentController::getTitle'
+    _controller: '\Drupal\dab\Controller\DabComponentController::documentation'
+  options:
+    parameters:
+      component_type:
+        type: string
+      machine_name:
+        type: string
+      provider:
+        type: string
+  requirements:
+    _permission: 'access dab components'
+
+dab.edit_component:
+  path: '/admin/dab/components/{component_type}/{provider}/{machine_name}/edit'
+  defaults:
+    _title: 'Edit component'
+    _form: 'Drupal\dab\Form\AddComponentForm'
+  options:
+    parameters:
+      component_type:
+        type: string
+      machine_name:
+        type: string
+      provider:
+        type: string
+  requirements:
+    _permission: 'administer dab components'
+
+dab.duplicate_component:
+  path: '/admin/dab/components/{component_type}/{provider}/{machine_name}/duplicate'
+  defaults:
+    _title: 'Duplicate component'
+    _form: 'Drupal\dab\Form\ConfirmationComponentForm'
+    action: 'duplicate'
+  options:
+    parameters:
+      component_type:
+        type: string
+      machine_name:
+        type: string
+      provider:
+        type: string
+  requirements:
+    _permission: 'administer dab components'
+
+dab.delete_component:
+  path: '/admin/dab/components/{component_type}/{provider}/{machine_name}/delete'
+  defaults:
+    _title: 'Delete component'
+    _form: 'Drupal\dab\Form\ConfirmationComponentForm'
+    action: 'delete'
+  options:
+    parameters:
+      component_type:
+        type: string
+      machine_name:
+        type: string
+      provider:
+        type: string
+  requirements:
+    _permission: 'administer dab components'

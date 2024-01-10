@@ -1,0 +1,33 @@
+<div class="dab-components">
+  {{ form }}
+
+  <div class="dab-components_container">
+    <aside class="dab-components_sidebar">
+      <ul class="dab-components_sidebar-list">
+        {% for component_type in components_types %}
+          <li class="dab-components_sidebar-item {{ component_type.class|join(' ') }}">
+            <a href="{{ component_type.url }}" class="dab-components_sidebar-link" {{ 'active' in component_type.class ? " aria-current='page'"}}>
+              {{ component_type.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </aside>
+
+    <section class="dab-components_grid">
+      <ul class="dab-components_menu">
+        {% for component in components %}
+          <li class="dab-components_card card">
+            <a href="{{ component.url }}" class="dab-component_menu-item">
+              <h3>{{ component.title }}</h3>
+              <em>{{ component.machine_name }}</em>
+              {% if component.description is defined and component.description is not empty %}
+                <p class="dab-component_description">{{ component.description }}</p>
+              {% endif %}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  </div>
+</div>

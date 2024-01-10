@@ -1,0 +1,41 @@
+# Dab component type list task.
+dab.view_component_list:
+  base_route: 'dab.component_type_list'
+  route_name: 'dab.component_type_list'
+  title: 'Components'
+
+dab.add_component:
+  base_route: 'dab.component_type_list'
+  route_name: 'dab.add_component'
+  title: 'Add component'
+
+dab.menu_settings:
+  base_route: 'dab.component_type_list'
+  route_name: 'dab.components_types_configuration'
+  title: 'Settings'
+
+# Dab component links task.
+dab.view_component:
+  base_route: 'dab.component'
+  route_name: 'dab.component'
+  title: 'View'
+
+dab.documentation_component:
+  base_route: 'dab.component'
+  route_name: 'dab.component_documentation'
+  title: 'Documentation'
+
+dab.edit_component:
+  base_route: 'dab.component'
+  route_name: 'dab.edit_component'
+  title: 'Edit'
+
+dab.duplicate_component:
+  base_route: 'dab.component'
+  route_name: 'dab.duplicate_component'
+  title: 'Duplicate'
+
+dab.delete_component:
+  base_route: 'dab.component'
+  route_name: 'dab.delete_component'
+  title: 'Delete'

@@ -1,0 +1,14 @@
+{
+    "name": "drupal/dab",
+    "description": "Drupal Atomic Builder is a new way to build components for front end developpers inside Drupal without beeing dependant of bacl end developpers. It is using Single Directory Component (SDC) to work.",
+    "type": "drupal-module",
+    "homepage": "https://drupal.org/project/dab",
+    "support": {
+        "issues": "https://drupal.org/project/issues/dab",
+        "source": "https://git.drupalcode.org/project/dab"
+    },
+    "require" : {
+        "drupal/core": "^10.1",
+        "league/commonmark": "^2.4"
+    }
+}

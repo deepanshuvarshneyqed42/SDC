@@ -1,0 +1,7 @@
+.toolbar[class*="light"] a.toolbar-icon.toolbar-icon-dab-menu::before {
+  filter: invert(1);
+}
+
+a.toolbar-icon.toolbar-icon-dab-menu::before {
+  background-image: url('../assets/dab-logo.svg');
+}

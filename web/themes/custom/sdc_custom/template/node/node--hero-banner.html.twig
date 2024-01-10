@@ -83,8 +83,7 @@
 <article{{ attributes.addClass(event_classes) }}>
   {{ include('sdc_custom:hero-banner', {
       heading: label.0['#context'].value,
-      ctaText: content.field_cta_link.0['#title'],
-      ctaHref: content.field_cta_link.0['#url'],
+      ctaText: content.field_cta_link.0,
       image: image_url,
       description: content.body
     })

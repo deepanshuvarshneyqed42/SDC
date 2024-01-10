@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{{ page_title }}</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    {% for stylesheet in stylesheets %}
+      <link rel="stylesheet" href="/{{ stylesheet }}">
+    {% endfor %}
+
+  </head>
+
+  <body>
+    <div class="container">
+      {% if template_path is defined and template_path is not empty %}
+        {% include template_path with data only %}
+      {% endif %}
+    </div>
+
+    {% for script in scripts %}
+      <script src="/{{ script }}"></script>
+    {% endfor %}
+  </body>
+
+</html>

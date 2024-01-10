@@ -1,0 +1,7 @@
+sdc_styleguide.explorer:
+  path: '/sdc-testing'
+  defaults:
+    _title: 'Single Directory Components Explorer'
+    _form: 'Drupal\sdc_styleguide\Form\SDCExplorerForm'
+  requirements:
+    _permission: 'use sdc explorer'

@@ -1,0 +1,44 @@
+<div class="dab-main">
+  <nav class="dab-menu">
+    <ul class="dab-menu_container dab-menu_container--right">
+      {% if template_select is defined %}
+        <li class="dab-menu_item">
+          {{ template_select }}
+        </li>
+      {% endif %}
+
+      {% if version_select is defined %}
+        <li class="dab-menu_item">
+          {{ version_select }}
+        </li>
+      {% endif %}
+
+      {% if responsive_select is defined %}
+        <li class="dab-menu_item">
+          {{ responsive_select }}
+        </li>
+      {% endif %}
+
+      {% if reset_button is defined %}
+        <li class="dab-menu_item">
+          {{ reset_button }}
+        </li>
+      {% endif %}
+
+      {% if reload_button is defined %}
+        <li class="dab-menu_item">
+          {{ reload_button }}
+        </li>
+      {% endif %}
+
+      <li class="dab-menu_item">
+        <a href="{{ iframe_src }}" target="_blank" class="button" title="{{ 'Open in a new tab'|t }}" aria-label="{{ 'Open in a new tab'|t }}">↗</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="dab-container">
+    <iframe src='{{ iframe_src }}' frameborder="0" loading="lazy" scrolling="yes" class="dab-iframe"></iframe>
+  </div>
+
+</div>
