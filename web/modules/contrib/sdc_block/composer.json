@@ -1,0 +1,20 @@
+{
+    "name": "drupal/sdc_block",
+    "description": "Generates blocks from Single Directory Components",
+    "type": "drupal-module",
+    "require-dev": {
+        "dg/bypass-finals": "^1.5"
+    },
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Mateu Aguiló Bosch (e0ipso)",
+            "email": "mateu@mateuaguilo.com"
+        }
+    ],
+    "require": {
+        "drupal/cl_editorial": "^2",
+        "e0ipso/schema-forms": "^2"
+    },
+    "minimum-stability": "dev"
+}

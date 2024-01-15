@@ -1,0 +1,54 @@
+<?php
+
+/**
+ * @file
+ * Module implementation file.
+ */
+
+use Drupal\cl_editorial\NoThemeComponentManager;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\sdc\Plugin\Component;
+
+/**
+ * Implements hook_cl_component_audit_alter().
+ */
+function sdc_block_cl_component_audit_alter(array &$card_build, Component $component): void {
+  $card_build['table']['#header'][] = t('Block Support');
+  $allowed_components = &drupal_static(__FUNCTION__);
+  if (!isset($allowed_components)) {
+    $component_manager = \Drupal::service(NoThemeComponentManager::class);
+    assert($component_manager instanceof NoThemeComponentManager);
+    $filters = \Drupal::config('sdc_tags.settings')
+      ->get(sprintf('component_tags.%s', 'sdc_block:block')) ?? [];
+    unset($filters['tag_id']);
+    $allowed_components = array_map(
+      static fn (Component $component) => $component->getPluginId(),
+      $component_manager->getFilteredComponents(...$filters),
+    );
+  }
+  $card_build['table']['#rows'][0][] = in_array($component->getPluginId(), $allowed_components, TRUE)
+    ? t('🌕 Generates a block')
+    : t('🌑 No block');
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function sdc_block_form_sdc_tags_auto_tagging_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $form['#submit'][] = 'sdc_block_invalidate_block_plugin_caches';
+}
+
+/**
+ * Clears block plugin definitions so we can pick up on the new filters.
+ *
+ * @param array $form
+ *   The form array.
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ *   The form state.
+ */
+function sdc_block_invalidate_block_plugin_caches(array &$form, FormStateInterface $form_state) {
+  if (($form_state->getTriggeringElement()['#array_parents'] ?? []) !== ['actions', 'submit']) {
+    return;
+  }
+  \Drupal::service('plugin.manager.block')->clearCachedDefinitions();
+}

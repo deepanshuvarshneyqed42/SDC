@@ -1,0 +1,3 @@
+'sdc_block:block':
+  label: Block (SDC Block)
+  description: Components tagged with this tag will be available as blocks.

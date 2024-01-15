@@ -1,0 +1,7 @@
+services:
+  logger.channel.sdc_block:
+    parent: logger.channel_base
+    arguments: ['sdc_block']
+
+  Drupal\sdc_block\Render\ComponentBlockRenderer:
+    arguments: ['@token', '@plugin.manager.sdc']

@@ -1,0 +1,16 @@
+{# Markup for the component #}
+
+<div {{ attributes.addClass('my-banner-witout-image') }}>
+  <div class="my-banner--header">
+    <h3>{{ heading }}</h3>
+    {% if ctaButton is not empty %}
+      <div class="my-banner--cta">
+        {{ ctaButton }}
+      </div>
+    {% endif %}
+  </div>
+  <div class="my-banner--body">
+    {{ description }}
+  </div>
+</div>
+

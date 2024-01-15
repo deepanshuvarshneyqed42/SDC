@@ -1,0 +1,14 @@
+name: SDC Block
+description: Generates blocks from Single Directory Components
+package: Components
+core_version_requirement: ^10
+type: module
+dependencies:
+  - drupal:block
+  - cl_editorial:cl_editorial
+  - cl_editorial:sdc_tags
+
+# Information added by Drupal.org packaging script on 2023-11-29
+version: '1.0.0-beta2'
+project: 'sdc_block'
+datestamp: 1701295151

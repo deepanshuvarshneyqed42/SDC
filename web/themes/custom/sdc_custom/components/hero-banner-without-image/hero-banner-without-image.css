@@ -1,0 +1,44 @@
+.my-banner-witout-image {
+  max-width: 1200px;
+  position: relative;
+  color: white;
+  background-size: cover;
+  background: black;
+  padding: 2rem;
+  margin: 20px 0;
+}
+
+.my-banner--header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.my-banner--header h3 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.my-banner--body > * {
+  margin-bottom: 0;
+}
+
+.my-banner--body > :first-child {
+  margin-top: 1rem;
+}
+
+.my-banner--cta a {
+  margin: 0;
+  padding: 1em 2em;
+  background-color: #a6192e;
+  opacity: 1;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+}
+
+.my-banner--cta a:hover {
+  background-color: #d4253d;
+  color: white;
+  font-weight: 700;
+}

@@ -1,6 +1,6 @@
-$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
-name: Hero Banner
-description: Banner with title and a CTA link
+name: Hero Banner Without Image
+group: Banner without Image
+description: Banner without Image and with title and a CTA link
 props:
   type: object
   properties:
@@ -10,15 +10,11 @@ props:
       examples:
         - Join us at The Conference
       type: string
-    ctaText:
-      title: CTA Text
+    ctaButton:
+      title: CTA Button
       type: string
       examples:
         - Click me!
-    image:
-      title: Media Image
-      description: Background image for the banner.
-      type: string
     description:
       title: Description
       description: herobanner body.

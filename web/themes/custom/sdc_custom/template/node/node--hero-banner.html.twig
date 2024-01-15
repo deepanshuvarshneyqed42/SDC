@@ -81,9 +81,9 @@
 {% set image_url = file_url(node.field_images.entity.fileuri) %}
 
 <article{{ attributes.addClass(event_classes) }}>
-  {{ include('sdc_custom:hero-banner', {
+  {{ include('sdc_custom:hero-banner-with-image', {
       heading: label.0['#context'].value,
-      ctaText: content.field_cta_link.0,
+      ctaButton: content.field_cta_link.0,
       image: image_url,
       description: content.body
     })

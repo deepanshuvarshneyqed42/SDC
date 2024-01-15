@@ -29,6 +29,7 @@
         "drupal/gin_toolbar": "^1.0@rc",
         "drupal/paragraphs": "^1.16",
         "drupal/paragraphs_viewmode": "^1.1",
+        "drupal/sdc_block": "^1.0@beta",
         "drupal/sdc_display": "^1.0@beta",
         "drupal/sdc_examples": "1.x-dev@dev",
         "drupal/sdc_story_generator": "2.0.x-dev@dev",

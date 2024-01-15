@@ -3,19 +3,15 @@
   {% set attributes = attributes.setAttribute('style', 'background-image: linear-gradient(to right, black, black, rgba(0, 0, 0, 70%), transparent), url("' ~ image|render|striptags|trim|default('') ~ '");') %}
 {% endif %}
 
-{% if viewmode is not empty %}
-  {% set variation = viewmode|default('banner_with_image') %}
-{% endif %}
-
 
 {# Markup for the component #}
 
 <div {{ attributes.addClass('my-banner') }}>
   <div class="my-banner--header">
     <h3>{{ heading }}</h3>
-    {% if ctaText is not empty %}
+    {% if ctaButton is not empty %}
       <div class="my-banner--cta">
-        {{ ctaText }}
+        {{ ctaButton }}
       </div>
     {% endif %}
   </div>
