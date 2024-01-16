@@ -1,11 +1,12 @@
 .my-banner-witout-image {
   max-width: 1200px;
   position: relative;
-  color: white;
+  color: black;
   background-size: cover;
-  background: black;
+  background: white;
   padding: 2rem;
   margin: 20px 0;
+  border: 1px solid black;
 }
 
 .my-banner--header {

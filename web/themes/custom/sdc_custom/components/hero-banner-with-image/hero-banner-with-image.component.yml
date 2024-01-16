@@ -1,5 +1,5 @@
 name: Hero Banner With Image
-group: Banner with image
+group: Banner
 description: Banner with title and a CTA link
 props:
   type: object
